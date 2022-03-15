@@ -9,9 +9,27 @@
         <servlet-name>week2</servlet-name><!--give any name-->
         <servlet-class>com.HuangXingyue.week2.HelloWorldServlet</servlet-class><!--package + name of servlet class -->
     </servlet>
+    <servlet>
+        <servlet-name>LifeCycleServlet</servlet-name>
+        <servlet-class>com.HuangXingyue.week3.LifeCycleServlet</servlet-class>
+    </servlet>
+    <!--automatic code-->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.HuangXingyue.week3.RegisterServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>week2</servlet-name>
         <url-pattern>/hello</url-pattern><!--url must start with / -->
     </servlet-mapping>
     <!-- 这里的/hello就相当于是com.HuangXingyue.week2.HelloWorldServlet-->
+    <servlet-mapping>
+        <servlet-name>LifeCycleServlet</servlet-name>
+        <url-pattern>/life</url-pattern>
+        <!-- 这里的/life==LifeCycleServlet==com.HuangXingyue.week3.LifeCycleServlet-->
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern><!--write this url in action-->
+    </servlet-mapping>
 </web-app>

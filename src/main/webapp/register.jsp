@@ -59,16 +59,16 @@
 <div class="box1">
     <div class="content">
            <text style="display: flex;margin-bottom: 20px;font-size: 13px">New User Registration!</text>
-     <form class="box" onsubmit="return check()">
-         <input type="text" placeholder="Username" id="Username" required/>
-         <input type="password" placeholder="Password" id="Password" required />
-         <input type="email" placeholder="Email" id="Email" required/>
+     <form class="box" onsubmit="return check()" method="post" action="register">
+         <input type="text" placeholder="Username" id="Username" name="username" required/>
+         <input type="password" placeholder="Password" id="Password" name="password" required />
+         <input type="email" placeholder="Email" id="Email" name="email" required/>
       <div>
          <text>Gender</text>
-         <input id="man" type="radio" checked="checked" name="1"/>Male
-         <input id="woman" type="radio" name="1" />female
+         <input id="man" type="radio" checked="checked" name="gender" value="male"/>Male
+         <input id="woman" type="radio" name="gender" value="female"/>female
       </div>
-         <input type="text" id="Date" style="margin-top: 10px" placeholder="Date of Birth(yyyy-mm-dd)" required/>
+         <input type="text" id="Date" style="margin-top: 10px" placeholder="Date of Birth(yyyy-mm-dd)" name="birthDate" required/>
          <input type="submit" value="Register" id="register" style="text-align: center;height: 40px;
             width: 300px;" />
      </form>
