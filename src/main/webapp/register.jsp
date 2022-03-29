@@ -6,15 +6,27 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
+
+
+
 <html>
 <head>
     <title>New User Registration!</title>
     <style type="text/css">
         body{
-            background-color:lightyellow;
+            /*background-color:lightyellow;*/
+            background-color: lavender;
+            /*display: flex;*/
+            align-items: center;
+            justify-content: center;
+        }
+        .all{
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
         }
         .box1{
             display: flex;
@@ -22,12 +34,13 @@
             justify-content: center;
             height: 400px;
             width: 500px;
-            border:1px solid gray;
-            box-shadow: 0px 0px 10px 5px gray;
+            border:2px solid gainsboro;
+            box-shadow: 0px 0px 15px 3px darkgray;
             border-radius: 20px;
+            background-color: lavenderblush;
         }
         /*.content{*/
-
+        /*    */
         /*}*/
         .box{
             display: flex;
@@ -56,6 +69,13 @@
 
 </head>
 <body>
+
+<%@include file="header.jsp"%>
+
+<div class="all">
+    <div style="display: flex;">
+        <h3>This is my register JSP page</h3>
+    </div>
 <div class="box1">
     <div class="content">
            <text style="display: flex;margin-bottom: 20px;font-size: 13px">New User Registration!</text>
@@ -74,6 +94,10 @@
      </form>
     </div>
 </div>
+</div>
+
+<%@include file="footer.jsp"%>
+
 <script>
     let birth = document.querySelectorAll("input")[5];
     let email = document.querySelectorAll("input")[2];
@@ -105,5 +129,9 @@
 
     }
 </script>
+
+
+
 </body>
 </html>
+

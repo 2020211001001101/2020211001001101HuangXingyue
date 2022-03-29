@@ -57,7 +57,6 @@ public class RegisterServlet extends HttpServlet {
             preparedStatement.executeUpdate();
             con.commit();
             System.out.println("insert successfully");
-
             // select all rows from usertable
             sql = "select * from usertable";
             con.setAutoCommit(false);

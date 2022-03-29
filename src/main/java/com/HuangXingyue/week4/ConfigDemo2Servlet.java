@@ -28,7 +28,6 @@ public class ConfigDemo2Servlet extends HttpServlet {
         System.out.println("studentId:"+studentId);
         response.setContentType("text/html");
 
-        // Hello
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
         out.println("<h1>name:" + name + "</h1>");
