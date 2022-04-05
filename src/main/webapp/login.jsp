@@ -58,7 +58,13 @@
 <body>
 
 <%@include file="header.jsp"%>
+<h2>Login</h2>
+<%
+    if (!(request.getAttribute("message")==null)){
+        out.print("<h3>"+request.getAttribute("message")+"</h3>");
+    }
 
+%>
 <div class="all">
     <div style="display: flex;">
         <h3>This is my Login JSP page</h3>

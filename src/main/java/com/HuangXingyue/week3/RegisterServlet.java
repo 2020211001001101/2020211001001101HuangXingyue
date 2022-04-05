@@ -2,6 +2,7 @@ package com.HuangXingyue.week3;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,8 +13,9 @@ import java.sql.*;
 //sutomatic -new -->servlet
 public class RegisterServlet extends HttpServlet {
     Connection con = null;
-    public void init(){
-        ServletContext context =getServletContext();
+    public void init( ) throws ServletException {
+        super.init();
+       /* ServletContext context =getServletContext();
         String driver=context.getInitParameter("driver");
         String url=context.getInitParameter("url");
         String username=context.getInitParameter("username");
@@ -26,12 +28,12 @@ public class RegisterServlet extends HttpServlet {
             //one connection -
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
-        }
+        }*/
+      con = (Connection) getServletContext().getAttribute("con");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("register serlvet doGet");
-        response.sendRedirect("./register.jsp");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -58,11 +60,11 @@ public class RegisterServlet extends HttpServlet {
             con.commit();
             System.out.println("insert successfully");
             // select all rows from usertable
-            sql = "select * from usertable";
-            con.setAutoCommit(false);
-            preparedStatement = con.prepareStatement(sql);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            writer.println("<table border=\"1\">");
+//            sql = "select * from usertable";
+//            con.setAutoCommit(false);
+//            preparedStatement = con.prepareStatement(sql);
+//            ResultSet resultSet = preparedStatement.executeQuery();
+            /*writer.println("<table border=\"1\">");
             writer.println("<tr>");
             writer.println("<th>ID</th>");
             writer.println("<th>username</th>");
@@ -81,10 +83,15 @@ public class RegisterServlet extends HttpServlet {
                 writer.println("<td>"+ resultSet.getString("birthDate")+"</td>");
                 writer.println("<tr>");
             }
-            writer.println("</table>");
+            writer.println("</table>");*/
             con.commit();
+            response.sendRedirect("login.jsp");
+//            writer.close();
 
-            writer.close();
+            //at this point request given to userList.jsp
+            //url doesnot change
+            //no more here
+            System.out.println("I am in RegisterServlet-->doPost()--> after forward()");//no see this line
         } catch (Exception e) {
             e.printStackTrace();
         }

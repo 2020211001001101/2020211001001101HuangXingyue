@@ -72,6 +72,14 @@
             <param-value>2020211001001101</param-value>
         </init-param>
     </servlet>
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>com.HuangXingyue.week6.SearchServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>week2</servlet-name>
@@ -96,4 +104,7 @@
         <servlet-name>ConfigDemoServlet</servlet-name>
         <url-pattern>/config</url-pattern>
     </servlet-mapping>
+    <listener>
+        <listener-class>com.HuangXingyue.week6.JDBCServletContextListener</listener-class>
+    </listener>
 </web-app>
