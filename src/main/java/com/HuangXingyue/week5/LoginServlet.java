@@ -1,5 +1,8 @@
 package com.HuangXingyue.week5;
 
+import com.HuangXingyue.dao.UserDao;
+import com.HuangXingyue.model.User;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,7 +40,8 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("login serlvet doGet");
+        //System.out.println("login serlvet doGet");
+        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -50,9 +54,25 @@ public class LoginServlet extends HttpServlet {
         System.out.println(username);
         System.out.println(password);
 
-         // TODO 4:VALIDATE USER - SELECT * FROM USERTABLE WHERE USERNAME='XXX' AND PASSWORD='YYY'
+
+        UserDao userDao=new UserDao();
         try {
-            String sql = "Select * from usertable where username=? and password=? ";
+            User user= userDao.findByUsernamePassword(con,username,password);
+            if(user!=null){
+                request.setAttribute("user",user);
+                request.getRequestDispatcher("WEB-INF/views/userList.jsp").forward(request,response);
+            }else {
+                request.setAttribute("message","Username or Password Eorror!!!");
+                request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        // TODO 4:VALIDATE USER - SELECT * FROM USERTABLE WHERE USERNAME='XXX' AND PASSWORD='YYY'
+       /* try {
+           // String sql = "Select * from usertable where username=? and password=? ";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             preparedStatement.setString(1,username);
             preparedStatement.setString(2,password);
@@ -77,7 +97,7 @@ public class LoginServlet extends HttpServlet {
         }
     } catch (SQLException e) {
             e.printStackTrace();
-        }
+        }*/
     } public void destroy(){
             super.destroy();
             //close connection here - when stop tomcat

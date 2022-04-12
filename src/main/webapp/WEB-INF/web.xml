@@ -107,4 +107,8 @@
     <listener>
         <listener-class>com.HuangXingyue.week6.JDBCServletContextListener</listener-class>
     </listener>
+    
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
 </web-app>
