@@ -65,6 +65,25 @@
     }
 
 %>
+
+<%
+   Cookie[] allCookies= request.getCookies();
+   String username ="",password="",rememberMeVal="";
+   if (allCookies!=null){
+       for (Cookie c :allCookies){
+           if (c.getName().equals("cUsername")){
+               username = c.getValue();
+           }
+           if (c.getName().equals("cPassword")){
+               password = c.getValue();
+           }
+           if (c.getName().equals("cRememberMe")){
+               rememberMeVal = c.getValue();
+           }
+       }
+   }
+%>
+
 <div class="all">
     <div style="display: flex;">
         <h3>This is my Login JSP page</h3>
@@ -73,8 +92,9 @@
         <div class="content">
             <text style="display: flex;margin-bottom: 20px;font-size: 13px">Welcome Login !</text>
             <form class="box" onsubmit="return check()" method="post" action="login">
-                <input type="text" placeholder="Username" id="Username" name="username" required/>
-                <input type="password" placeholder="Password" id="Password" name="password" required />
+                <input type="text" placeholder="Username" id="Username" name="username" value="<%=username%>" required/>
+                <input type="password" placeholder="Password" id="Password" name="password" value="<%=password%>" required />
+                <input type="checkbox" value="1"<%=rememberMeVal.equals("1") ? "checked":""%>checked name="rememberMe" />Remember<br/>
                 <input type="submit" value="Login" id="login" style="text-align: center;height: 40px;
             width: 300px;" />
             </form>

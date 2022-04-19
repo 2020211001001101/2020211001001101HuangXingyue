@@ -12,7 +12,13 @@
 <%@include file="header.jsp"%>
 <h1> User List</h1>
 <%
-    User user=(User)request.getAttribute("user");
+    Cookie[] allCookies=request.getCookies();
+    for (Cookie c:allCookies){
+        out.println("<br/>"+c.getName()+" --- "+c.getValue());
+    }
+%>
+<%
+    User user=(User)session.getAttribute("user");
 %>
 <table border="1">
     <tr>
@@ -31,6 +37,9 @@
         <td><%=user.getEmail()%></td>
         <td><%=user.getGender()%></td>
         <td><%=user.getBirthdate()%></td>
+
     </tr>
+
 </table>
+<a href="updateUser">update</a>
 <%@include file="footer.jsp"%>

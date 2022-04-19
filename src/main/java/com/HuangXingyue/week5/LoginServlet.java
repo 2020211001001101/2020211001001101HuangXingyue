@@ -2,13 +2,10 @@ package com.HuangXingyue.week5;
 
 import com.HuangXingyue.dao.UserDao;
 import com.HuangXingyue.model.User;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
@@ -58,8 +55,34 @@ public class LoginServlet extends HttpServlet {
         UserDao userDao=new UserDao();
         try {
             User user= userDao.findByUsernamePassword(con,username,password);
+            System.out.println(user);
             if(user!=null){
-                request.setAttribute("user",user);
+                String rememberMe=request.getParameter("rememberMe");
+                if (rememberMe!=null && rememberMe.equals("1")){
+                    Cookie usernameCookie =new Cookie("cUsername",user.getUsername());
+                    Cookie passwordCookie =new Cookie("cPassword",user.getPassword());
+                    Cookie rememberMeCookie =new Cookie("cRememberMe",rememberMe);
+
+                    usernameCookie.setMaxAge(5);
+                    passwordCookie.setMaxAge(5);
+                    rememberMeCookie.setMaxAge(5);
+
+                    response.addCookie(usernameCookie);
+                    response.addCookie(passwordCookie);
+                    response.addCookie(rememberMeCookie);
+
+                }
+
+               /* Cookie c =new Cookie("sessionid",""+user.getID());
+                c.setMaxAge(10*60);
+                response.addCookie(c);*/
+
+                HttpSession session = request.getSession();
+                System.out.println("session id -->"+session.getId());
+                session.setMaxInactiveInterval(10);
+
+
+                session.setAttribute("user",user);
                 request.getRequestDispatcher("WEB-INF/views/userList.jsp").forward(request,response);
             }else {
                 request.setAttribute("message","Username or Password Eorror!!!");

@@ -43,22 +43,17 @@ public class UserDao implements IUserDao {
 
     @Override
     public int updateUser(Connection con, User user) throws SQLException {
-        String sql = "update  usertable set username=? where id=?";
+        String sql = "update  usertable set username=?,password=?,email=?,gender=?,birthDate=? where id=?";
         PreparedStatement st = con.prepareStatement(sql);
+
+//        String id = null;
         st.setString(1,user.getUsername());
-        String id = null;
-        st.setInt(2,user.getID());
+        st.setString(2,user.getPassword());
+        st.setString(3,user.getEmail());
+        st.setString(4,user.getGender());
+        st.setString(5,String.valueOf(user.getBirthdate()));
+        st.setInt(6,user.getID());
         st.executeUpdate();
-        ResultSet rs = st.executeQuery();
-        if (rs.next()) {
-            user = new User();
-            user.setID(rs.getInt("id"));
-            user.setUsername(rs.getString("username"));
-            user.setPassword(rs.getString("password"));
-            user.setEmail(rs.getString("email"));
-            user.setGender(rs.getString("gender"));
-            user.setBirthdate(rs.getDate("birthDate"));
-        }
         return 0;
     }
 
