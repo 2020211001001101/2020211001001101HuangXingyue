@@ -9,9 +9,12 @@ com\HuangXingyue\week3\LifeCycleServlet.class
 com\HuangXingyue\week4\JDBCDemoServlet.class
 com\example\HuangXingyue2020211001001101\HelloServlet.class
 com\HuangXingyue\week5\LoginServlet.class
+com\HuangXingyue\filter\AdminAuthenticationFilter.class
 com\HuangXingyue\week6\SearchServlet.class
+com\HuangXingyue\filter\HelloFilter.class
 com\HuangXingyue\week6\JDBCServletContextListener.class
 com\HuangXingyue\dao\UserDao.class
 com\HuangXingyue\week3\RegisterServlet.class
 com\HuangXingyue\week2\HelloWorldServlet.class
 com\HuangXingyue\dao\IUserDao.class
+com\HuangXingyue\filter\FrontEndAuthenticationFilter.class
