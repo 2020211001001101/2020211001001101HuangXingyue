@@ -1,4 +1,5 @@
 com\HuangXingyue\controller\UpdateUserServlet.class
+com\HuangXingyue\controller\AdminHomeServlet.class
 com\HuangXingyue\controller\LogoutServlet.class
 com\HuangXingyue\week4\ConfigDemoServlet.class
 com\HuangXingyue\week6\RedirectServlet.class
