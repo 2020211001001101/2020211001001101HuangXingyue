@@ -16,11 +16,11 @@ public class SearchServlet extends HttpServlet {
         if (txt.length() == 0) {
             response.sendRedirect(contextPath+"/index.jsp");
         } else {
-            if (search.equals("Baidu")) {
+            if (search.equals("baidu")) {
                 response.sendRedirect("https://www.baidu.com/s?wd="+txt);
-            } else if (search.equals("Bing")) {
+            } else if (search.equals("bing")) {
                 response.sendRedirect("https://cn.bing.com/search?q="+txt);
-            } else if (search.equals("Google")) {
+            } else if (search.equals("google")) {
                 response.sendRedirect("https://www.google.com/search?q="+txt);
             }
         }

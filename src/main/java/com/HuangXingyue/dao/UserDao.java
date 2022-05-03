@@ -43,9 +43,9 @@ public class UserDao implements IUserDao {
 
     @Override
     public int updateUser(Connection con, User user) throws SQLException {
+        System.out.println(2);
         String sql = "update  usertable set username=?,password=?,email=?,gender=?,birthDate=? where id=?";
         PreparedStatement st = con.prepareStatement(sql);
-
 //        String id = null;
         st.setString(1,user.getUsername());
         st.setString(2,user.getPassword());
@@ -88,7 +88,7 @@ public class UserDao implements IUserDao {
         if(rs.next()){
             user=new User();
             user.setID(rs.getInt("ID"));
-            user.setUsername(rs.getString("Username"));
+            user.setUsername(rs.getString("UserName"));
             user.setPassword(rs.getString("Password"));
             user.setEmail(rs.getString("Email"));
             user.setGender(rs.getString("Gender"));

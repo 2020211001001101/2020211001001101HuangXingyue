@@ -28,6 +28,7 @@ public class UpdateUserServlet extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println(1);
         String id=request.getParameter("id");
         String username=request.getParameter("username");
         String password = request.getParameter("password");
@@ -44,7 +45,8 @@ public class UpdateUserServlet extends HttpServlet {
         user.setBirthdate(Date.valueOf(birthDate));
         UserDao userDao = new UserDao();
         try{
-            userDao.updateUser(con,user);
+            int a =  userDao.updateUser(con,user);
+            System.out.println(a);
         } catch (SQLException e) {
             e.printStackTrace();
         }

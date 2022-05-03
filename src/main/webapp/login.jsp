@@ -72,7 +72,7 @@
     <div class="box1">
         <div class="content">
             <text style="display: flex;margin-bottom: 20px;font-size: 13px">Welcome Login !</text>
-            <form class="box" onsubmit="return check()" method="post" action="login">
+            <form class="box" onsubmit="return check()" method="post" action="<%=request.getContextPath()+"login"%>" >
                 <input type="text" placeholder="Username" id="Username" name="username" required/>
                 <input type="password" placeholder="Password" id="Password" name="password" required />
                 <input type="submit" value="Login" id="login" style="text-align: center;height: 40px;

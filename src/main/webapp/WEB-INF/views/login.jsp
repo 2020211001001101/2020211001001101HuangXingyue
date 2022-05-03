@@ -1,123 +1,50 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 改改
-  Date: 2022/3/29
-  Time: 18:15
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>login</title>
-    <style type="text/css">
-        body{
-            /*background-color:lightyellow;*/
-            background-color: lavender;
-            /*display: flex;*/
-            align-items: center;
-            justify-content: center;
-        }
-        .all{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        .box1{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 330px;
-            width: 430px;
-            border:2px solid gainsboro;
-            box-shadow: 0px 0px 15px 3px darkgray;
-            border-radius: 20px;
-            background-color: lavenderblush;
-        }
-        /*.content{*/
-        /*    */
-        /*}*/
-        .box{
-            display: flex;
-            flex-direction: column;
-        }
-        #Username,#Password{
-            /*background-color: darksalmon;*/
-            display: flex;
-            align-items: center;
-            box-sizing: border-box;
-            /*text-align: center;*/
-            margin-bottom: 10px;
-            /*margin-top: 10px;*/
-            height: 40px;
-            width: 300px;
-            outline: none;/*去掉input选中后的黑色边框*/
-        }
-    </style>
-</head>
-<body>
-
 <%@include file="header.jsp"%>
-<h2>Login</h2>
+<section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-1">
+					<div class="login-form"><!--login form-->
+					<h2>Login to your account</h2>	<%
+    if(!(request.getAttribute("message")==null)){
+    out.println("<h2>"+request.getAttribute("message")+"</h2>");
+}%>
 <%
-    if (!(request.getAttribute("message")==null)){
-        out.print("<h3>"+request.getAttribute("message")+"</h3>");
+    Cookie[] cookies=request.getCookies();
+    String username="";
+    String password="";
+    String rememberMe="";
+    if (cookies!=null){
+        for (Cookie cookie:cookies){
+            if (cookie.getName().equals("cUsername")){
+                username=cookie.getValue();
+            }
+            if (cookie.getName().equals("cPassword")){
+                password=cookie.getValue();
+            }
+            if (cookie.getName().equals("cRememberMe")){
+                rememberMe=cookie.getValue();
+            }
+        }
     }
-
+    //update 5 user basepath
 %>
 
-<%
-   Cookie[] allCookies= request.getCookies();
-   String username ="",password="",rememberMeVal="";
-   if (allCookies!=null){
-       for (Cookie c :allCookies){
-           if (c.getName().equals("cUsername")){
-               username = c.getValue();
-           }
-           if (c.getName().equals("cPassword")){
-               password = c.getValue();
-           }
-           if (c.getName().equals("cRememberMe")){
-               rememberMeVal = c.getValue();
-           }
-       }
-   }
-%>
-
-<div class="all">
-    <div style="display: flex;">
-        <h3>This is my Login JSP page</h3>
-    </div>
-    <div class="box1">
-        <div class="content">
-            <text style="display: flex;margin-bottom: 20px;font-size: 13px">Welcome Login !</text>
-            <form class="box" onsubmit="return check()" method="post" action="login">
-                <input type="text" placeholder="Username" id="Username" name="username" value="<%=username%>" required/>
-                <input type="password" placeholder="Password" id="Password" name="password" value="<%=password%>" required />
-                <input type="checkbox" value="1"<%=rememberMeVal.equals("1") ? "checked":""%>checked name="rememberMe" />Remember<br/>
-                <input type="submit" value="Login" id="login" style="text-align: center;height: 40px;
-            width: 300px;" />
-            </form>
-        </div>
-    </div>
-</div>
-
+<form method="post" action="<%=basePath+"login"%>">
+    <input type="text" name="username" placeholder="Username" value="<%=username%>"><br>
+   <input type="password" name="password" placeholder="password" value="<%=password%>">
+    <br/>
+    <span>
+		<input type="checkbox" class="checkbox" name="rememberMe" value="1" <%="1".equals(rememberMe)? "checked":""%>/> Keep me signed in
+   </span>
+    <button type="submit" class="btn btn-default">Login</button>
+</form>	
+					</div><!--/login form-->
+				</div>
+				
+				
+			</div>
+		</div>
+	</section><!--/form-->
 <%@include file="footer.jsp"%>
-
-<script>
-    function check() {
-        var pwd = document.getElementById('Password');
-        if (pwd.value.length < 8) {
-            pwd.value = "";
-            pwd.className="change";
-            pwd.placeholder = "length must be at least 8 characters!";
-            return false;
-        }
-        else {
-            return true
-        }
-    }
-</script>
-
-</body>
-</html>

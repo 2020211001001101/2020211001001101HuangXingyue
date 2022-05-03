@@ -33,7 +33,7 @@ public class RegisterServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("register serlvet doGet");
+        request.getRequestDispatcher("WEB-INF/views/register.jsp").forward(request,response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,7 +52,7 @@ public class RegisterServlet extends HttpServlet {
 
         try {
             String sql = "insert into usertable (username,password,email,gender,birthDate) values(\'"+username+"\',\'"
-                    +password+"\',\'"+email+"\',\'"+gender+"\',\'"+birthDate+"\')";
+                    +password+"\',\'"+email+"\',\'"+gender+"\',\'"+Date.valueOf(birthDate)+"\')";
             // insert data into database
             con.setAutoCommit(false);
             PreparedStatement preparedStatement = con.prepareStatement(sql);
@@ -85,7 +85,7 @@ public class RegisterServlet extends HttpServlet {
             }
             writer.println("</table>");*/
             con.commit();
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login");
 //            writer.close();
 
             //at this point request given to userList.jsp
