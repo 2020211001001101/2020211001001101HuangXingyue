@@ -11,6 +11,7 @@ D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\controll
 D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\model\User.java
 D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\controller\ProductDetailsServlet.java
 D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\week2\HelloWorldServlet.java
+D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\controller\CartServlet.java
 D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\controller\GetImgServlet.java
 D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\week3\RegisterServlet.java
 D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\model\Product.java
@@ -27,4 +28,6 @@ D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\week4\Co
 D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\week4\JDBCDemoServlet.java
 D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\dao\ProductDao.java
 D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\week6\RedirectServlet.java
+D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\model\Item.java
+D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\controller\UserListServlet.java
 D:\IDEACode\2020211001001101HuangXingyue\src\main\java\com\HuangXingyue\controller\HomeServlet.java

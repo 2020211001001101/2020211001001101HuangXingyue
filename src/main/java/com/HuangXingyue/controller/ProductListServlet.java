@@ -26,7 +26,6 @@ public class ProductListServlet extends HttpServlet {
        } catch (SQLException e) {
            e.printStackTrace();
        }
-
         String path="/WEB-INF/views/admin/productList.jsp";
         request.getRequestDispatcher(path).forward(request,response);
 

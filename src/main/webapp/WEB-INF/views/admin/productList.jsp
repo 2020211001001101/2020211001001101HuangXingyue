@@ -59,14 +59,13 @@
 							</td>
 					</c:forEach>
 						<%
-							com.HuangXingyue.model.Product p =(com.HuangXingyue.model.Product)pageContext.findAttribute("p");
+							com.HuangXingyue.model.Product  p =(com.HuangXingyue.model.Product) pageContext.findAttribute("p");
 							int pid = p.getProductId();
-							java.sql.Connection con = (java.sql.Connection)application.getAttribute("con");
+							java.sql.Connection con = (java.sql.Connection) application.getAttribute("con");
 							String catName = com.HuangXingyue.model.Category.findByCategoryId(con,pid);
-
 						%>
 							<td class="cart_quantity"><%=catName%>></td>
-							
+
 							<td class="cart_total">
 								<p class="cart_total_price"> ${p.productDescription}</p>
 							</td>
