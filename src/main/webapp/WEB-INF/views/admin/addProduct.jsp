@@ -30,8 +30,7 @@
 				               	<select name="categoryId">
 										<option >-- Category --</option>
 											<!-- loop_start -->
-											
-										<option value="1">FASHION</option>
+
 									<option value="1">FASHION</option>
 									<option value="2">HOUSEHOLD</option>
 									<option value="3">INTERIORS</option>
