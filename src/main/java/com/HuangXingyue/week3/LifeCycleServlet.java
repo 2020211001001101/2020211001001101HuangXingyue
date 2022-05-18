@@ -11,7 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 //now use
-@WebServlet("/life")//only url - no web.xml code
+@WebServlet("/Life")//only url - no web.xml code
 public class LifeCycleServlet extends HttpServlet {
     //1.tomcat read wen.xml file and find out all servlet class
     //2.load servlet - when ?2.first request for this servlet come in - from client

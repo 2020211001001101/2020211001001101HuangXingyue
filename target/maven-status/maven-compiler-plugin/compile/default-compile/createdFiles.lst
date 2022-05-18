@@ -17,7 +17,9 @@ com\HuangXingyue\week2\HelloWorldServlet.class
 com\HuangXingyue\dao\IUserDao.class
 com\HuangXingyue\controller\UpdateUserServlet.class
 com\HuangXingyue\controller\UserListServlet.class
+com\HuangXingyue\lab1\Assingment1\LifeCycleServlet.class
 com\HuangXingyue\controller\ProductListServlet.class
+com\HuangXingyue\lab1\Assingment2\MyDearServlet.class
 com\HuangXingyue\model\Product.class
 com\HuangXingyue\controller\ProductDetailsServlet.class
 com\HuangXingyue\dao\ProductDao.class
