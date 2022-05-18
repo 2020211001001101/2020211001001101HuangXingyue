@@ -29,7 +29,7 @@ public class JDBCServletContextListener implements ServletContextListener {
            // System.out.println("init()--> " +con) ;//when?
             //set connection as a context attribute -- for all jsp and servlet
            servletContextEvent.getServletContext().setAttribute("con",con);//name=value
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

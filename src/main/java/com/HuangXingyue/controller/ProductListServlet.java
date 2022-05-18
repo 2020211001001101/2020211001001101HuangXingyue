@@ -23,6 +23,7 @@ public class ProductListServlet extends HttpServlet {
            con = (Connection) getServletContext().getAttribute("con");
            List<Product> productList = productDao.findAll(con);
            request.setAttribute("productList",productList);
+//           System.out.println(productList);
        } catch (SQLException e) {
            e.printStackTrace();
        }
@@ -33,6 +34,8 @@ public class ProductListServlet extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
 
     }
 

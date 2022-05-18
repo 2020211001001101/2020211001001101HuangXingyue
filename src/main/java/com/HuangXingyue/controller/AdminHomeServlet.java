@@ -13,6 +13,7 @@ import java.io.IOException;
 @WebServlet(name = "AdminHomeServlet",value = "/admin/home")
 public class AdminHomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         HttpSession session=request.getSession(false);
         if(session!=null&& session.getAttribute("user")!=null){
             User user=(User)session.getAttribute("user");

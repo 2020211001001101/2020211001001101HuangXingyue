@@ -57,6 +57,7 @@ public class CartServlet extends HttpServlet {
     }
 
     private void buy(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException,SQLException {
+
         HttpSession session = request.getSession();
         int id = request.getParameter("productId")!=null? Integer.parseInt(request.getParameter("productId")):0;
         int quantityParam = request.getParameter("quantity")!=null?Integer.parseInt(request.getParameter("quantity")):1;

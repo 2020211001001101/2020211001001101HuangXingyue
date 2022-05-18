@@ -38,7 +38,7 @@ public class LifeCycleServlet extends HttpServlet {
             System.out.println("Connection --> in JDBCDemoServlet"+con);//just print for test
 
             //one connection -
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         System.out.println("c "+con);//line 2

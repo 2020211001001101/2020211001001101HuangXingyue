@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "MyDearServlet",value = "/myDear")
 public class MyDearServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String name=request.getParameter("name");
         String cla=request.getParameter("Class");
         String id=request.getParameter("id");

@@ -67,7 +67,7 @@ public class JDBCDemoServlet extends HttpServlet {
             con= DriverManager.getConnection(url,username,password);
             System.out.println("Connection --> in JDBCDemoServlet"+con);//just print for test
             //one connection -
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

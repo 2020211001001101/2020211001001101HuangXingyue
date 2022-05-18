@@ -27,6 +27,7 @@ public class AddProductServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         try{
             List<Category> categoryList=Category.findAllCategory(con);
             request.setAttribute("categoryList",categoryList);
