@@ -9,7 +9,9 @@ com\HuangXingyue\controller\CartServlet.class
 com\example\HuangXingyue2020211001001101\HelloServlet.class
 com\HuangXingyue\controller\GetImgServlet.class
 com\HuangXingyue\week5\LoginServlet.class
+com\HuangXingyue\controller\OrderServlet.class
 com\HuangXingyue\controller\ShopServlet.class
+com\HuangXingyue\controller\OrderDetailsServlet.class
 com\HuangXingyue\filter\HelloFilter.class
 com\HuangXingyue\week6\JDBCServletContextListener.class
 com\HuangXingyue\dao\UserDao.class
@@ -27,9 +29,14 @@ com\HuangXingyue\controller\HomeServlet.class
 com\HuangXingyue\week3\LifeCycleServlet.class
 com\HuangXingyue\model\Item.class
 com\HuangXingyue\week4\JDBCDemoServlet.class
+com\HuangXingyue\dao\IOrderDao.class
 com\HuangXingyue\controller\AddProductServlet.class
+com\HuangXingyue\model\Order.class
 com\HuangXingyue\dao\IProductDao.class
 com\HuangXingyue\filter\AdminAuthenticationFilter.class
+com\HuangXingyue\controller\AccountDetailsServlet.class
+com\HuangXingyue\dao\OrderDao.class
 com\HuangXingyue\week6\SearchServlet.class
 com\HuangXingyue\week3\RegisterServlet.class
 com\HuangXingyue\filter\FrontEndAuthenticationFilter.class
+com\HuangXingyue\model\Payment.class

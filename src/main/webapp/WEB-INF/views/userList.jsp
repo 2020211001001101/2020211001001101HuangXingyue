@@ -19,6 +19,7 @@
 %>
 <%
     User user=(User)session.getAttribute("user");
+//    System.out.println("get from userList.jsp :"+user.getUsername());
 %>
 <table border="1">
     <tr>
