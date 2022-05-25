@@ -114,7 +114,7 @@
 
     <servlet>
         <servlet-name>LifeCycleServlet</servlet-name>
-        <servlet-class>com.HuangXingyue.lab1.Assingment1.LifeCycleServlet</servlet-class>
+        <servlet-class>com.HuangXingyue.lab1.Assignment1.LifeCycleServlet</servlet-class>
 
     </servlet>
     <servlet-mapping>

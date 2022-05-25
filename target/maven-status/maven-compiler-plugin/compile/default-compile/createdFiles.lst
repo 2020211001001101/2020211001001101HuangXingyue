@@ -1,5 +1,6 @@
 com\HuangXingyue\controller\AdminHomeServlet.class
 com\HuangXingyue\controller\LogoutServlet.class
+com\HuangXingyue\lab1\Assignment2\MyDearServlet.class
 com\HuangXingyue\week4\ConfigDemoServlet.class
 com\HuangXingyue\week6\RedirectServlet.class
 com\HuangXingyue\model\Category.class
@@ -7,6 +8,7 @@ com\HuangXingyue\model\User.class
 com\HuangXingyue\week4\ConfigDemo2Servlet.class
 com\HuangXingyue\controller\CartServlet.class
 com\example\HuangXingyue2020211001001101\HelloServlet.class
+com\HuangXingyue\lab2\HuangXingyueFilter.class
 com\HuangXingyue\controller\GetImgServlet.class
 com\HuangXingyue\week5\LoginServlet.class
 com\HuangXingyue\controller\OrderServlet.class
@@ -19,9 +21,8 @@ com\HuangXingyue\week2\HelloWorldServlet.class
 com\HuangXingyue\dao\IUserDao.class
 com\HuangXingyue\controller\UpdateUserServlet.class
 com\HuangXingyue\controller\UserListServlet.class
-com\HuangXingyue\lab1\Assingment1\LifeCycleServlet.class
 com\HuangXingyue\controller\ProductListServlet.class
-com\HuangXingyue\lab1\Assingment2\MyDearServlet.class
+com\HuangXingyue\lab2\LoginFilter.class
 com\HuangXingyue\model\Product.class
 com\HuangXingyue\controller\ProductDetailsServlet.class
 com\HuangXingyue\dao\ProductDao.class
@@ -29,12 +30,14 @@ com\HuangXingyue\controller\HomeServlet.class
 com\HuangXingyue\week3\LifeCycleServlet.class
 com\HuangXingyue\model\Item.class
 com\HuangXingyue\week4\JDBCDemoServlet.class
+com\HuangXingyue\lab2\Login.class
 com\HuangXingyue\dao\IOrderDao.class
 com\HuangXingyue\controller\AddProductServlet.class
 com\HuangXingyue\model\Order.class
 com\HuangXingyue\dao\IProductDao.class
 com\HuangXingyue\filter\AdminAuthenticationFilter.class
 com\HuangXingyue\controller\AccountDetailsServlet.class
+com\HuangXingyue\lab1\Assignment1\LifeCycleServlet.class
 com\HuangXingyue\dao\OrderDao.class
 com\HuangXingyue\week6\SearchServlet.class
 com\HuangXingyue\week3\RegisterServlet.class
