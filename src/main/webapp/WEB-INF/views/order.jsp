@@ -124,7 +124,7 @@
 		<a class="cart_quantity_delete" href="<%=basePath%>cart?action=remove&productId=${c.product.productId}"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
-							<c:set var="cal" value="${cal*(c.product.price*c.quantity)}"/>
+							<c:set var="cal" value="${cal+(c.product.price*c.quantity)}"/>
 					</c:forEach>
 					<!--loop_end-->
 						</c:otherwise>
