@@ -6,6 +6,7 @@ com\HuangXingyue\week6\RedirectServlet.class
 com\HuangXingyue\model\Category.class
 com\HuangXingyue\model\User.class
 com\HuangXingyue\week4\ConfigDemo2Servlet.class
+com\HuangXingyue\controller\ContactUsServlet.class
 com\HuangXingyue\controller\CartServlet.class
 com\example\HuangXingyue2020211001001101\HelloServlet.class
 com\HuangXingyue\lab2\HuangXingyueFilter.class
@@ -13,6 +14,7 @@ com\HuangXingyue\controller\GetImgServlet.class
 com\HuangXingyue\week5\LoginServlet.class
 com\HuangXingyue\controller\OrderServlet.class
 com\HuangXingyue\controller\ShopServlet.class
+com\HuangXingyue\controller\AdminOrderListServlet.class
 com\HuangXingyue\controller\OrderDetailsServlet.class
 com\HuangXingyue\filter\HelloFilter.class
 com\HuangXingyue\week6\JDBCServletContextListener.class
