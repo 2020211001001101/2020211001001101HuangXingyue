@@ -28,9 +28,7 @@ if(request.getParameter("username").equals("admin") && request.getParameter("pas
 
 <c:choose>
     <c:when test="${(param.username=='admin')&&(param.password=='admin')}">
-        <%
-            System.out.println("dada----------------");
-        %>
+
         <%--todo 3: when username == admin use c:url and c:param to make url = "welcome.jsp?username=admin"--%>
 
         <c:url value="welcome.jsp">
