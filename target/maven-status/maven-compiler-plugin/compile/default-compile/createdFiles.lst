@@ -17,6 +17,7 @@ com\HuangXingyue\controller\OrderDetailsServlet.class
 com\HuangXingyue\filter\HelloFilter.class
 com\HuangXingyue\week6\JDBCServletContextListener.class
 com\HuangXingyue\dao\UserDao.class
+com\HuangXingyue\lab3\calServlet.class
 com\HuangXingyue\week2\HelloWorldServlet.class
 com\HuangXingyue\dao\IUserDao.class
 com\HuangXingyue\controller\UpdateUserServlet.class
